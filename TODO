@@ -1,0 +1,19 @@
+Change how we handle fields
+	* Instead of making these abstract attempts at field names and field
+		values, just make a set number of fields - durationMin, durationSec,
+		date, miles, pounds, comments, weather, etc. etc.
+	* Same thing for equipment
+	* Have a GUI options panel that controls whether or not they're shown.
+		Save the contents of the options panel along with wherever you're saving
+		the workouts, and load it whenever the GUI loads
+	* Do what Indeed does with DailyIndexFields - have a class called
+		"WorkoutFields" that just contains constants for all of the fields we
+		could possibly store. If anything, overstore rather than understore,
+		because it's really easy to just hide stuff or thrown in placeholders /
+		nulls / empty strings!
+Change how we handle workouts
+	* Maintain a save file / database entry (same place as the GUI options) that
+		declares workout names matched with which fields the user wants to show
+		for them -- this way, you can create arbitrary workouts and it'll just
+		"work". 
+	* Same thing with equipment / what fields get shown for equipment
